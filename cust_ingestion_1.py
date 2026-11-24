@@ -5,4 +5,4 @@ customers=[
 for customer in cust:
   print(customer)
 print("Customer data Intehration completed")
-print("New feature added successfully"
+print("New feature added successfully")
