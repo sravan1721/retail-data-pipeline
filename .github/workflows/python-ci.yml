@@ -12,6 +12,6 @@ jobs:
         with:
           python-version: '3.11'
       - name: Execute Python Script
-        run: python cust_ingestion.py
+        run: python cust_ingestion_1.py
       - name: Pipeline completed
         run: echo "DONE SUCCESFULLY"
