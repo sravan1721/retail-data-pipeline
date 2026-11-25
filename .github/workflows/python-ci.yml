@@ -26,8 +26,9 @@ jobs:
         run: echo "DONE SUCCESFULLY"
       - name: Create Build Package
         run: |
+          mkdir -p dist
           python -c "import os, zipfile; os.makedirs('dist', exist_ok=True); z=zipfile.ZipFile('dist/retail-data-pipeline.zip','w'); z.write('cust_ingestion_1.py'); z.close()"
-
+          ls - l dist
       - name: Publish Build Artifact
         uses: actions/upload-artifact@v4
         with:
