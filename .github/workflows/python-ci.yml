@@ -17,6 +17,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install PyTest
+        run: python -m pip install pytest
+      - name: Execute Test cases
         run: python -m pytest -v
       - name: Execute Python Script
         run: python cust_ingestion_1.py
