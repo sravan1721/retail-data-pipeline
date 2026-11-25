@@ -22,3 +22,4 @@ def validate_customer(customer_id,customer_name):
 
 print(validate_customer(101,"Miller"))
 print(validate_customer(102,""))
+print(validate_customer(-1,"Allen"))
