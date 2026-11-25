@@ -2,7 +2,10 @@ name: retail Data Engineering CI
 on:
  push:
    branches:
-     - main
+     - devlop
+ pull_request:
+   branches:
+     - devlop
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -13,6 +16,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install PyTest
+        run: python -m pytest -v
       - name: Execute Python Script
         run: python cust_ingestion_1.py
       - name: Pipeline completed
