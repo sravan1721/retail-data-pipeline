@@ -6,3 +6,9 @@ for customer in customers:
   print(customer)
 print("Customer data Intehration completed")
 print("New feature added successfully")
+
+def calculate_bonus(sal):
+  return sal*0.10
+sal=50000
+bonus=calculate_bonus(sal)
+print("Employee bonus :",bonus)
