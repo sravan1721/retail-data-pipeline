@@ -24,6 +24,17 @@ jobs:
         run: python cust_ingestion_1.py
       - name: Pipeline completed
         run: echo "DONE SUCCESFULLY"
+      - name: Create Build Package
+        run: |
+          python -c "import os, zipfile; os.makedirs('dist', exist_ok=True); z=zipfile.ZipFile('dist/retail-data-pipeline.zip','w'); z.write('cust_ingestion_1.py'); z.close()"
+
+      - name: Publish Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: retail-pipeline-build
+          path: dist/retail-pipeline.zip
+          retention-days: 7
+
   deploy_dev:
     needs: validate
     runs-on: ubuntu-latest
