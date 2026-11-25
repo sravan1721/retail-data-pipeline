@@ -12,3 +12,13 @@ def calculate_bonus(sal):
 sal=50000
 bonus=calculate_bonus(sal)
 print("Employee bonus :",bonus)
+
+def validate_customer(customer_id,customer_name):
+  if customer_id <=0:
+    return "Invalid customer ID"
+  if not customer_name:
+    return "Invalid customer name"
+  return "Valid customer"
+
+print(validate_customer(101,"Miller"))
+print(validate_customer(102,""))
