@@ -24,7 +24,7 @@ jobs:
         run: python cust_ingestion_1.py
       - name: Pipeline completed
         run: echo "DONE SUCCESFULLY"
-      name: retail Data Engineering CI
+      - name: retail Data Engineering CI
 on:
  push:
    branches:
