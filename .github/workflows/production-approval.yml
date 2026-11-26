@@ -9,7 +9,7 @@ jobs:
         run: echo "Running tests before production deployment"
       - name: QA Validation
         run: echo "QA validation completed successfully"
-production-deployment:
+  production-deployment:
     needs: testing
     runs-on: ubuntu-latest
     environment:
