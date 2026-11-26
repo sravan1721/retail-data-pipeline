@@ -14,16 +14,16 @@ jobs:
       - name: Production Health Check
         id: health-check
         continue-on-error: true
-        run : |
-        echo "checking application health....."
-        echo "Health check failed. Rolling back to previous version."
-        exit 1
+        run: |
+          echo "checking application health....."
+          echo "Health check failed. Rolling back to previous version."
+          exit 1
       - name: Rollback to Previous Version 1.0
         if: steps.health-check.outcome == 'failure'
-        run : |
-        echo "Deployement is failed"
-        echo "Rolling baclk to previous version 1.0"
-        echo "Previous version 1.0 is deployed to the Production Environment"
+        run: |
+          echo "Deployement is failed"
+          echo "Rolling baclk to previous version 1.0"
+          echo "Previous version 1.0 is deployed to the Production Environment"
       - name: Deployment completed
         if: steps.health-check.outcome == 'success'
         run : echo "Deployment completed successfully! Green Version 2.0 is now live"
