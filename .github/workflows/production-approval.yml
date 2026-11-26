@@ -1,0 +1,22 @@
+name: Production Approval Demo
+on:
+  workflow_dispatch:
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: echo "Running tests before production deployment"
+      - name: QA Validation
+        run: echo "QA validation completed successfully"
+production-deployment:
+    needs: testing
+    runs-on: ubuntu-latest
+    environment:
+      name: PROD
+      
+    steps:
+      - name: Production Approval
+        run: echo "Approval recieved for production deployment"
+      - name: Deploye to Production
+        run: echo "Retail Data Pipeline is deployed to Production Environment"
